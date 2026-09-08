@@ -35,6 +35,7 @@ A fully functional VPN built from scratch in Go, implementing encryption, key ex
 
 vpn-from-scratch/
 │
+
 ├── 📁 cmd/ # Executable entry points
 │ ├── server/
 │ │ ├── main.go # Server entry point & CLI
@@ -43,6 +44,7 @@ vpn-from-scratch/
 │ ├── main.go # Client entry point & CLI
 │ └── vpn_tunnel_client.go # Tunnel client logic
 │
+
 ├── 📁 pkg/ # Public reusable packages
 │ ├── crypto/
 │ │ ├── crypto.go # AES-256-GCM encryption & serialization
@@ -56,20 +58,25 @@ vpn-from-scratch/
 │ └── tun/
 │ └── wintun.go # WinTun device wrapper (Windows TUN)
 │
+
 ├── 📁 internal/ # Private packages (project-specific)
 │
+
 ├── 📁 examples/ # Example usage & demos
 │ └── basic_tunnel.go # Simple tunnel demonstration
 │
+
 ├── 📁 docs/ # Project documentation
 │ ├── ARCHITECTURE.md # Detailed architecture overview
 │ ├── SETUP.md # Installation & configuration guide
 │ └── TROUBLESHOOTING.md # Common issues & solutions
 │
+
 ├── 📁 scripts/ # Helper scripts & automation
 │ ├── build.sh # Build binaries for all platforms
 │ └── test.sh # Run test suite
 │
+
 ├── 📁 cmd/tunnel_test/ # Testing utilities
 │ └── main.go # Tunnel simulation tests
 │
