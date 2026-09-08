@@ -67,7 +67,7 @@ vpn-from-scratch/
 
 ### Clone Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/vpn-from-scratch.git
+git clone https://github.com/mohidz372-hub/vpn-from-scratch.git
 cd vpn-from-scratch
 ```
 
