@@ -34,27 +34,50 @@ A fully functional VPN built from scratch in Go, implementing encryption, key ex
 ## Project Structure
 
 vpn-from-scratch/
-├── crypto/
-│ ├── crypto.go # AES-256-GCM encryption
-│ └── keyexchange.go # Diffie-Hellman implementation
-├── network/
-│ └── connection.go # Secure connection wrapper
-├── vpn/
-│ ├── packet.go # IP packet parsing
-│ ├── dns.go # DNS handling
-│ └── wireguard.go # WireGuard integration
-├── tun/
-│ └── wintun.go # WinTun device wrapper
-├── server/
-│ ├── main.go # Server entry point
-│ └── vpn_tunnel_server.go # Tunnel server implementation
-├── client/
-│ ├── main.go # Client entry point
-│ └── vpn_tunnel_client.go # Tunnel client implementation
-└── cmd/
-└── tunnel_test/
-└── main.go # Testing utilities
-
+│
+├── 📁 cmd/ # Executable entry points
+│ ├── server/
+│ │ ├── main.go # Server entry point & CLI
+│ │ └── vpn_tunnel_server.go # Tunnel server logic
+│ └── client/
+│ ├── main.go # Client entry point & CLI
+│ └── vpn_tunnel_client.go # Tunnel client logic
+│
+├── 📁 pkg/ # Public reusable packages
+│ ├── crypto/
+│ │ ├── crypto.go # AES-256-GCM encryption & serialization
+│ │ └── keyexchange.go # Diffie-Hellman key exchange (1024-bit)
+│ ├── network/
+│ │ └── connection.go # Secure connection wrapper & protocol
+│ ├── vpn/
+│ │ ├── packet.go # IPv4 packet parsing & serialization
+│ │ ├── dns.go # DNS handling & forwarding
+│ │ └── wireguard.go # WireGuard device integration
+│ └── tun/
+│ └── wintun.go # WinTun device wrapper (Windows TUN)
+│
+├── 📁 internal/ # Private packages (project-specific)
+│
+├── 📁 examples/ # Example usage & demos
+│ └── basic_tunnel.go # Simple tunnel demonstration
+│
+├── 📁 docs/ # Project documentation
+│ ├── ARCHITECTURE.md # Detailed architecture overview
+│ ├── SETUP.md # Installation & configuration guide
+│ └── TROUBLESHOOTING.md # Common issues & solutions
+│
+├── 📁 scripts/ # Helper scripts & automation
+│ ├── build.sh # Build binaries for all platforms
+│ └── test.sh # Run test suite
+│
+├── 📁 cmd/tunnel_test/ # Testing utilities
+│ └── main.go # Tunnel simulation tests
+│
+├── go.mod # Go module definition
+├── go.sum # Go dependencies (auto-generated)
+├── README.md # Project documentation (this file)
+├── .gitignore # Git ignore patterns
+└── LICENSE # MIT License
 
 ## Requirements
 
